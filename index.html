@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANGA MBOKAL EDITION</title>
+    <!-- ICONES ET PARTAGE -->
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#050c08">
+    <meta name="description" content="Manga Mbokal Édition : des histoires qui inspirent. Lis des mangas et des bandes dessinées africaines.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Manga Mbokal Édition">
+    <meta property="og:title" content="Manga Mbokal Édition">
+    <meta property="og:description" content="Des histoires qui inspirent. Lis des mangas et des bandes dessinées africaines.">
+    <meta property="og:image" content="https://www.manga-mbokal.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+    <!-- ICONES FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="langue.css">
+<link rel="stylesheet" href="mbokal.css">
+</head>
+<body>
+
+    <!-- BARRE SUPERIEURE TOP -->
+    <header class="top-bar">
+        <div class="logo">
+            <img class="logo-emblem" src="emblem.png" alt="" width="56" height="40">
+            <div class="logo-text">
+                <strong>MANGA MBOKAL</strong>
+                <span>EDITION</span>
+            </div>
+        </div>
+
+        <div class="top-actions">
+            <!-- Button recherche -->
+            <a href="recherche.html" class="top-button" aria-label="Rechercher">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            
+            <!-- Button langues âges -->
+            <a href="menu.html" class="language" aria-label="Langue">
+                <i class="fa-solid fa-globe"></i> FR
+            </a>
+            
+            <!-- Button menu top -->
+            <a href="menu.html" class="top-button" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="main-content">
+        
+        <!-- BANNIERE HERO TOP -->
+        <section class="hero">
+            <div class="hero-content">
+                <img class="hero-logo" src="logo.png" alt="Manga Mbokal Édition, des histoires qui inspirent" width="108" height="162">
+                <p class="hero-small">L'IMAGINATION AFRICAINE RENCONTRE LE MANGA</p>
+                <h1>MANGA MBOKAL <br> EDITION</h1>
+                <!-- Button découvrir -->
+                <a href="decouvrir.html" class="discover-button">
+                    Découvrir nos univers <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION MANGAS -->
+        <section class="content-section">
+            <div class="identity-bar">
+                <h2><i class="fa-solid fa-book-open"></i> MANGAS</h2>
+                <!-- Button Voir tout -->
+                <a href="decouvrir.html">Voir tout <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="horizontal-scroll" data-catalog>
+                <!-- MANGA 1 COVER -->
+                <article class="manga-card">
+                    <div class="cover ishi"><a class="cover-link" href="manga.html?id=ishi-no-erito" aria-label="Fiche de ISHI NO ERITO"></a>
+                        <!-- Button ajout -->
+                        <button type="button" class="add-button" data-fav="ishi-no-erito" aria-pressed="false" aria-label="Ajouter aux favoris"><i class="fa-solid fa-plus"></i></button>
+                        <div class="cover-title">ISHI NO ERITO</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>ISHI NO ERITO</h3>
+                        <p>Action • Fantastique</p>
+                        <!-- Button lire -->
+                        <a href="lecteur.html?manga=ishi-no-erito" class="read-button"><i class="fa-solid fa-play"></i> LIRE</a>
+                    </div>
+                </article>
+
+                <!-- MANGA 2 COVER -->
+                <article class="manga-card">
+                    <div class="cover mani"><a class="cover-link" href="manga.html?id=mani-kongo" aria-label="Fiche de MANI KONGO"></a>
+                        <button type="button" class="add-button" data-fav="mani-kongo" aria-pressed="false" aria-label="Ajouter aux favoris"><i class="fa-solid fa-plus"></i></button>
+                        <div class="cover-title">MANI KONGO</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>MANI KONGO</h3>
+                        <p>Histoire • Aventure</p>
+                        <a href="lecteur.html?manga=mani-kongo" class="read-button"><i class="fa-solid fa-play"></i> LIRE</a>
+                    </div>
+                </article>
+
+                <!-- MANGA 3 COVER -->
+                <article class="manga-card">
+                    <div class="cover nzango"><a class="cover-link" href="manga.html?id=nzango" aria-label="Fiche de NZANGO"></a>
+                        <button type="button" class="add-button" data-fav="nzango" aria-pressed="false" aria-label="Ajouter aux favoris"><i class="fa-solid fa-plus"></i></button>
+                        <div class="cover-title">NZANGO</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>NZANGO</h3>
+                        <p>Action</p>
+                        <a href="lecteur.html?manga=nzango" class="read-button"><i class="fa-solid fa-play"></i> LIRE</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION ACTUALITÉS -->
+        <section class="content-section">
+            <div class="identity-bar">
+                <h2><i class="fa-solid fa-newspaper"></i> ACTUALITÉS</h2>
+                <!-- Button Voir tout actualités -->
+                <a href="actualites.html">Voir tout <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="horizontal-scroll news-scroll">
+                <article class="news-card">
+                    <div class="news-image">ACTUALITÉ</div>
+                    <div class="news-info">
+                        <span>NOUVEAUTÉ</span>
+                        <h3>Nouveau chapitre bientôt !</h3>
+                        <p>Découvrez notre manga ISHI NO ERITO continue...</p>
+                        <a href="actualites.html">Lire plus</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">ANNONCE</div>
+                    <div class="news-info">
+                        <span>ANNONCE</span>
+                        <h3>Le projet MANI KONGO</h3>
+                        <p>Découvrez notre manga. Nouvel univers.</p>
+                        <a href="actualites.html">Lire plus</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">ÉVÉNEMENT</div>
+                    <div class="news-info">
+                        <span>ÉVÉNEMENT</span>
+                        <h3>MANGA MBOKAL EDITION</h3>
+                        <p>Une nouvelle aventure commence.</p>
+                        <a href="evenements.html">Voir événement</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION PERSONNAGES -->
+        <section class="content-section">
+            <div class="identity-bar">
+                <h2><i class="fa-solid fa-user-group"></i> PERSONNAGES</h2>
+                <!-- Button Voir tout personnages -->
+                <a href="personnages.html">Voir tout <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="horizontal-scroll">
+                <div class="character-card">
+                    <div class="character-image">ARAI</div>
+                    <h3>Arai Denimu</h3>
+                    <p>ISHI NO ERITO</p>
+                    <a href="personnages.html">Voir profil</a>
+                </div>
+                <div class="character-card">
+                    <div class="character-image">KAWASA</div>
+                    <h3>Kawasa Nakada</h3>
+                    <p>ISHI NO ERITO</p>
+                    <a href="personnages.html">Voir profil</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION STUDIO -->
+        <section class="content-section studio-section">
+            <div class="identity-bar">
+                <h2><i class="fa-solid fa-building"></i> STUDIO</h2>
+                <!-- Button Voir tout studio -->
+                <a href="studio.html">Voir tout <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="studio-card">
+                <div class="studio-logo"><img src="emblem.png" alt="" width="44" height="32"></div>
+                <div>
+                    <h2>MANGA MBOKAL EDITION</h2>
+                    <p>Création • Manga • Bande dessinée</p>
+                    <a href="studio.html">Découvrir notre studio</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- NAV CLASSE BOTTOM BAR -->
+    <nav class="bottom-bar">
+        <!-- Button Accueil -->
+        <a href="index.html" class="nav-item active" aria-current="page">
+            <span><i class="fa-solid fa-house"></i></span>
+            <small>Accueil</small>
+        </a>
+
+        <!-- Button Actualité -->
+        <a href="actualites.html" class="nav-item">
+            <span><i class="fa-solid fa-newspaper"></i></span>
+            <small>Actualité</small>
+        </a>
+
+        <!-- Button Studio -->
+        <a href="studio.html" class="nav-item">
+            <span><i class="fa-solid fa-building"></i></span>
+            <small>Studio</small>
+        </a>
+
+        <!-- Button Galerie -->
+        <a href="galerie.html" class="nav-item">
+            <span><i class="fa-solid fa-images"></i></span>
+            <small>Galerie</small>
+        </a>
+
+        <!-- Button Compte -->
+        <a href="compte.html" class="nav-item">
+            <span><i class="fa-solid fa-user"></i></span>
+            <small>Compte</small>
+        </a>
+    </nav>
+
+    
+<script src="mangas.js"></script>
+<script src="config.js"></script>
+<script src="mbokal.js"></script>
+<script src="catalogue.js"></script>
+<script src="traductions.js"></script>
+<script src="langue.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Lecteur — MANGA MBOKAL EDITION</title>
+    <!-- ICONES ET PARTAGE -->
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#050c08">
+    <meta name="description" content="Manga Mbokal Édition : des histoires qui inspirent. Lis des mangas et des bandes dessinées africaines.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Manga Mbokal Édition">
+    <meta property="og:title" content="Manga Mbokal Édition">
+    <meta property="og:description" content="Des histoires qui inspirent. Lis des mangas et des bandes dessinées africaines.">
+    <meta property="og:image" content="https://www.manga-mbokal.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="langue.css">
+    <link rel="stylesheet" href="lecteur.css">
+    <link rel="stylesheet" href="mbokal.css">
+</head>
+<body class="reader-page">
+
+    <!-- EN-TÊTE DU LECTEUR -->
+    <header class="reader-top" id="readerTop">
+        <a href="decouvrir.html" class="reader-btn" id="backLink" aria-label="Retour">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <div class="reader-title">
+            <strong id="mangaTitle">Chargement…</strong>
+            <span id="chapterTitle"></span>
+        </div>
+        <button type="button" class="reader-btn" id="openChapters" aria-label="Liste des chapitres">
+            <i class="fa-solid fa-list"></i>
+        </button>
+        <button type="button" class="reader-btn" id="openComments" aria-label="Commentaires du chapitre">
+            <i class="fa-regular fa-comment"></i>
+            <span class="badge" id="commentBadge" hidden></span>
+        </button>
+        <button type="button" class="reader-btn" id="openSettings" aria-label="Réglages de lecture">
+            <i class="fa-solid fa-sliders"></i>
+        </button>
+    </header>
+
+    <!-- ZONE DE LECTURE -->
+    <main id="stage" class="stage" tabindex="-1" aria-live="polite"></main>
+
+    <!-- BARRE DU BAS -->
+    <footer class="reader-bottom" id="readerBottom">
+        <button type="button" class="reader-btn" id="prevChapter" aria-label="Chapitre précédent">
+            <i class="fa-solid fa-backward-step"></i>
+        </button>
+
+        <div class="progress">
+            <input type="range" id="slider" min="1" max="1" value="1" aria-label="Aller à la page">
+            <span id="counter" aria-live="off">1 / 1</span>
+        </div>
+
+        <button type="button" class="reader-btn" id="nextChapter" aria-label="Chapitre suivant">
+            <i class="fa-solid fa-forward-step"></i>
+        </button>
+    </footer>
+
+    <!-- PANNEAU : CHAPITRES -->
+    <div class="sheet" id="chaptersSheet" hidden>
+        <div class="sheet-backdrop" data-close></div>
+        <section class="sheet-box" role="dialog" aria-modal="true" aria-labelledby="chaptersHeading">
+            <div class="sheet-head">
+                <h2 id="chaptersHeading">Chapitres</h2>
+                <button type="button" class="reader-btn" data-close aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <ul class="chapter-list" id="chapterList"></ul>
+        </section>
+    </div>
+
+    <!-- PANNEAU : COMMENTAIRES -->
+    <div class="sheet" id="commentsSheet" hidden>
+        <div class="sheet-backdrop" data-close></div>
+        <section class="sheet-box" role="dialog" aria-modal="true" aria-labelledby="commentsHeading">
+            <div class="sheet-head">
+                <h2 id="commentsHeading">Commentaires</h2>
+                <button type="button" class="reader-btn" data-close aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="commentsRoot"></div>
+        </section>
+    </div>
+
+    <!-- PANNEAU : RÉGLAGES -->
+    <div class="sheet" id="settingsSheet" hidden>
+        <div class="sheet-backdrop" data-close></div>
+        <section class="sheet-box" role="dialog" aria-modal="true" aria-labelledby="settingsHeading">
+            <div class="sheet-head">
+                <h2 id="settingsHeading">Réglages de lecture</h2>
+                <button type="button" class="reader-btn" data-close aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div id="mangaSettings">
+            <p class="setting-label">Mode</p>
+            <div class="segmented" id="modeChoice" role="group" aria-label="Mode de lecture">
+                <button type="button" data-mode="vertical"><i class="fa-solid fa-arrows-up-down"></i> Défilement</button>
+                <button type="button" data-mode="page"><i class="fa-regular fa-file"></i> Page par page</button>
+            </div>
+
+            <p class="setting-label">Sens de lecture (page par page)</p>
+            <div class="segmented" id="dirChoice" role="group" aria-label="Sens de lecture">
+                <button type="button" data-dir="rtl">Droite → gauche</button>
+                <button type="button" data-dir="ltr">Gauche → droite</button>
+            </div>
+            </div>
+
+            <div id="novelBox" hidden>
+                <p class="setting-label">Taille du texte</p>
+                <div class="segmented" id="sizeChoice" role="group" aria-label="Taille du texte">
+                    <button type="button" data-size="0" translate="no">A−</button>
+                    <button type="button" data-size="1" translate="no">A</button>
+                    <button type="button" data-size="2" translate="no">A+</button>
+                    <button type="button" data-size="3" translate="no">A++</button>
+                </div>
+                <p class="setting-label">Thème</p>
+                <div class="segmented" id="themeChoice" role="group" aria-label="Thème">
+                    <button type="button" data-theme="dark">Sombre</button>
+                    <button type="button" data-theme="sepia">Sépia</button>
+                    <button type="button" data-theme="light">Clair</button>
+                </div>
+            </div>
+
+            <div id="pageLangBox" hidden>
+                <p class="setting-label">Langue des pages</p>
+                <div class="segmented wrap" id="pageLangChoice" role="group" aria-label="Langue des pages"></div>
+                <p class="setting-hint" id="pageLangHint"></p>
+            </div>
+
+            <p class="setting-hint">Vos réglages sont gardés sur cet appareil.</p>
+        </section>
+    </div>
+
+    <script src="mangas.js"></script>
+    <script src="config.js"></script>
+    <script src="mbokal.js"></script>
+<script src="catalogue.js"></script>
+    <script src="texte.js"></script>
+    <script src="commentaires.js"></script>
+    <script src="lecteur.js"></script>
+<script src="traductions.js"></script>
+<script src="langue.js"></script>
+</body>
+</html>

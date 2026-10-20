@@ -1,0 +1,110 @@
+/* =====================================
+   FICHE MANGA, CLASSEMENT, ADMINISTRATION
+===================================== */
+
+/* ----- Fiche d'un manga ----- */
+.fiche-head { display: flex; gap: 16px; align-items: flex-start; }
+
+.fiche-cover {
+    flex-shrink: 0;
+    width: 112px;
+    aspect-ratio: 2 / 3;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #1b3a2a, #07110b) center / cover;
+    border: 1px solid rgba(0, 255, 136, 0.28);
+}
+
+.fiche-info { flex: 1; min-width: 0; }
+.fiche-info h1 { font-size: 22px; line-height: 1.2; overflow-wrap: anywhere; }
+.fiche-genres { margin-top: 8px; color: var(--gray); font-size: 12px; line-height: 1.5; }
+
+.fiche-actions { display: flex; flex-direction: column; gap: 10px; margin: 18px 0; }
+.fiche-actions a, .fiche-actions button { display: block; text-align: center; text-decoration: none; }
+.fiche-actions .btn-main { color: #000; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 4px; }
+
+.stat {
+    padding: 12px 6px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 255, 136, 0.16);
+    background: var(--green-glass);
+    text-align: center;
+}
+
+.stat i { color: var(--green); font-size: 15px; }
+.stat b { display: block; margin: 6px 0 2px; font-size: 18px; font-variant-numeric: tabular-nums; }
+.stat span { display: block; color: var(--gray); font-size: 10px; line-height: 1.3; }
+
+.rate-line { display: flex; gap: 12px; margin: 16px 0 4px; }
+.rate-line .rate-btn { flex: 1; }
+
+/* ----- Classement ----- */
+.rank-tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+
+.rank-tabs button {
+    flex: 1 1 22%;
+    padding: 11px 6px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    background: transparent;
+    color: var(--gray);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.rank-tabs button[aria-selected="true"] { color: var(--green); border-color: var(--green); background: var(--green-glass); }
+.rank-tabs.small button { padding: 9px 6px; font-size: 11px; flex: 1 1 28%; }
+.rank-tabs button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+
+.rank-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+
+.rank-item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 255, 136, 0.14);
+    background: var(--green-glass);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.rank-no { flex-shrink: 0; width: 26px; text-align: center; font-size: 18px; font-weight: bold; color: var(--green); }
+.rank-item:nth-child(n+4) .rank-no { color: var(--gray); }
+
+.rank-cover {
+    flex-shrink: 0;
+    width: 44px;
+    height: 62px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1b3a2a, #07110b) center / cover;
+    border: 1px solid rgba(0, 255, 136, 0.25);
+}
+
+.rank-text { flex: 1; min-width: 0; }
+.rank-text strong { display: block; font-size: 14px; overflow-wrap: anywhere; }
+.rank-mini { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; color: var(--gray); font-size: 11px; }
+.rank-mini i { color: var(--green); margin-right: 4px; }
+.rank-value { flex-shrink: 0; font-size: 18px; font-weight: bold; font-variant-numeric: tabular-nums; }
+
+.rank-note { margin-top: 14px; color: var(--gray); font-size: 11px; line-height: 1.6; }
+
+/* ----- Administration ----- */
+.adm-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.adm-table th, .adm-table td { padding: 9px 6px; text-align: right; border-bottom: 1px solid rgba(0, 255, 136, 0.12); }
+.adm-table th:first-child, .adm-table td:first-child { text-align: left; }
+.adm-table th { color: var(--gray); font-weight: normal; }
+.adm-scroll { overflow-x: auto; }
+
+.adm-row-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.adm-row-actions button { padding: 9px 12px; border-radius: 10px; border: 1px solid rgba(0, 255, 136, 0.3); background: transparent; color: var(--white); font-size: 11px; cursor: pointer; }
+.adm-row-actions button.danger { border-color: #ff6b6b; color: #ff6b6b; }
+.adm-row-actions button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+
+.adm-report { padding: 14px 0; border-bottom: 1px solid rgba(0, 255, 136, 0.12); }
+.adm-report p { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; font-size: 13px; margin-top: 6px; }
+.adm-meta { color: var(--gray); font-size: 11px; }
+
+.fiche-desc { margin-top: 10px; font-size: 12px; line-height: 1.7; color: var(--gray); white-space: pre-wrap; overflow-wrap: anywhere; }
